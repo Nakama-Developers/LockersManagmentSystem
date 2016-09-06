@@ -10,16 +10,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		AdminPage.html = AdminPage.html
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{41CC6075-7162-4B68-B642-A871AE8B8BAB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{E5DFC884-4256-4CB0-84AC-67BC574A7F5B}"
 	ProjectSection(SolutionItems) = preProject
+		D:\Downloads\body.jpg = D:\Downloads\body.jpg
+		D:\Downloads\footer.png = D:\Downloads\footer.png
+		D:\Downloads\psu-header.png = D:\Downloads\psu-header.png
+		..\PSUMobileApp\www\images\psulogo.png = ..\PSUMobileApp\www\images\psulogo.png
 		..\PSUMobileApp\www\images\2\transperant-logo.png = ..\PSUMobileApp\www\images\2\transperant-logo.png
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "style", "style", "{D6FD3FEE-F51E-4CF7-8250-03A320E1A8FF}"
+	ProjectSection(SolutionItems) = preProject
+		adminPage.css = adminPage.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C4913452-D3A9-46F9-A148-53A950EB2D9A}"
 EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{41CC6075-7162-4B68-B642-A871AE8B8BAB} = {B1C14326-2BA7-4371-AC7F-48358E31254E}
+		{E5DFC884-4256-4CB0-84AC-67BC574A7F5B} = {B1C14326-2BA7-4371-AC7F-48358E31254E}
+		{D6FD3FEE-F51E-4CF7-8250-03A320E1A8FF} = {B1C14326-2BA7-4371-AC7F-48358E31254E}
+		{C4913452-D3A9-46F9-A148-53A950EB2D9A} = {B1C14326-2BA7-4371-AC7F-48358E31254E}
 	EndGlobalSection
 EndGlobal
