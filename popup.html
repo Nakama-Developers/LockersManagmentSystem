@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link type="text/css" rel="stylesheet" href="popupStyle.css" >
+        <script type="text/javascript" src="popupJs.js"></script>
+        <script type="text/javascript" src="button.js"></script>
+        <title>POPUP</title>
+    </head>
+    <body>
+        <button id="myBtn">Open Modal</button>
+
+                <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-status" id="model-status"></div>
+                <div class="modal-comments" id="model-comments"></div>
+                <div class="modal-header">
+                    <span class="close">×</span> <!-- this is just for closing the popup when clicking outside-->
+                    <h2 class="number" id="lockerNumber">68</h2>          
+                </div>
+            <div class="modal-body">
+                <table>
+                <tr> 
+                    <th>Full Name:</th>
+                    <td><input readonly="readonly" id="name" type="text"></td>
+                </tr>
+                <tr>
+                    <th>Student ID:</th>
+                    <td><input readonly="readonly" id="ID" type="text"></td>
+                </tr>
+                <tr>
+                    <th>E-mail:</th>
+                    <td><input readonly="readonly" id="e-mail" type="email"></td>
+                </tr>
+                <tr>
+                    <th>Mobile Number:</th>
+                    <td><input readonly="readonly" id="mobileNumber" type="text"></td>
+                </tr>
+                 <tr>
+                    <th>Comments:</th>
+                    <td><input readonly="readonly" id="comments"type="text"></td>
+                </tr>     
+                </table>  
+            </div>
+           
+            <div class="modal-footer">
+                <table>
+                <tr>
+                <td><a id="editButton"  class="editButton" onclick="edit">Edit</a></td>
+                <td><a id="availableButton"  class="availableButton">Available</a></td>
+                <td><a id="reservedButton"  class="reservedButton">Reserved</a></td>
+                <td><a id="maintenanceButton"  class="maintenanceButton">Under Maintenance</a></td>
+                </tr>
+                </table>
+            </div>
+            </div>
+         </div>
+           <script type="text/javascript" src="popupJs.js"></script>
+    </body>
+</html>
