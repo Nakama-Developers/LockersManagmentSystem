@@ -1,0 +1,144 @@
+﻿html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff repeat url(../img/body.jpg);
+}
+
+#mainHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: auto;
+    z-index: 5;
+    width: 100%;
+    padding-top: 10px;
+    background-image: url(../img/header-style.png), url(../img/psulogo.png);
+    background-color: #25B6C9;
+    background-repeat: no-repeat, no-repeat;
+}
+
+#mainHeader button{
+    position: absolute;
+    outline: none;
+    background-color: #25B6C9;
+    padding: 0.5em;
+    border: none;
+    font-family: inherit;
+    font-size: 1em;
+    font-weight: bold;
+    color: #FFF;
+    left: 0;
+    bottom: 0;
+}
+
+img{
+    display: block;
+    margin: auto;
+}
+
+body{
+    position: relative;
+    margin:  auto;
+    font-family: psu-font , Arial, sans-serif;
+    color: #25B6C9;
+}
+
+header > h1{
+    font-size: 2em;
+    font-weight: 100;
+}
+    header > h1 > abbr{
+    font-weight: bold;
+}
+
+#mainContent{
+    height: 100%;
+    width: 80%;
+    margin: auto;
+    padding-top: 8%;
+    background-color: #FFF;
+}
+
+#mainContent article{
+    margin: 0 5%;
+}
+
+#visibleLockers{
+    text-align: center;
+}
+
+#visibleLockers a{
+    position: relative;
+    display: inline-block;
+    height: 110px;
+    width: 110px;
+    font-size: 1.8em;
+    text-decoration: none;
+    background-color: #5FDFEF;
+    border: solid 3px #25B6C9;
+    margin: 5px;
+}
+
+#visibleLockers a > span{
+    position: absolute;
+    color: #FFF;
+    top: 30%;
+    right: 0;
+    left:  0;
+}
+
+.lockerHand{
+    background-color: #25B6C9;
+    position: absolute;
+    left: 0;
+    width: 10%;
+    height: 25%;
+    top: 33%;
+}
+
+.lockerStatus{
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 0;
+    height: 0;
+    border: solid 0.4em transparent;
+    border-top-color: #01aa00;
+    border-left-color: #01aa00;
+}
+
+.commented{
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 0;
+    height: 0;
+    border: solid 0.4em transparent;
+    border-top-color: #f12929;
+    border-right-color: #f12929;
+}
+
+aside{
+    background-color: #FFF;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    bottom: 0;
+    width: 0;
+}
+
+footer{
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+footer nav a{
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 5px;
+    color: inherit;
+}
