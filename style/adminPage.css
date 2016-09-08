@@ -72,9 +72,11 @@ img {
 header > h1{
     font-size: 2em;
     font-weight: 100;
+    text-shadow: 1px 3px 5px #25B6C9;
 }
     header > h1 > abbr{
     font-weight: bold;
+    text-shadow: none;
 }
 
 #mainContent{
@@ -83,6 +85,7 @@ header > h1{
     margin: auto;
     padding-top: 8%;
     background-color: #FFF;
+    box-shadow: 2px 0 8px 0 #ddd;
 }
 
 #mainContent article{
@@ -108,6 +111,17 @@ header > h1{
     margin: 5px;
 }
 
+    #visibleLockers a:hover{
+        transition-delay: 0.1s;
+        border-color: #d0d0d0;
+        background-color: #eee;
+    }
+
+    #visibleLockers a:active{
+        transition-delay: 0;
+        border-color: #dfdfdf;
+    }
+
 #visibleLockers a > span{
     position: absolute;
     color: #FFF;
@@ -116,16 +130,34 @@ header > h1{
     left:  0;
 }
 
-.lockerHand{
+    #visibleLockers a:hover > span{
+        transition-delay: 0.1s;
+        color: #25B6C9;
+    }
+
+#visibleLockers a .lockerHand{
     background-color: #25B6C9;
     position: absolute;
     left: 0;
     width: 10%;
     height: 25%;
     top: 33%;
+    transition: height 0.5s, width 0.5;
 }
 
-.lockerStatus{
+    #visibleLockers a:hover .lockerHand{
+        transition-delay: 0.1s;
+        background-color: #d0d0d0;
+    }
+
+    #visibleLockers a:active .lockerHand{
+        background-color: #dfdfdf;
+        width: 8%;
+        height: 20%;
+        transition: height 0.4s, width 0.4s;
+    }
+
+#visibleLockers a .lockerStatus{
     position: absolute;
     top: -3px;
     left: -3px;
@@ -136,7 +168,7 @@ header > h1{
     border-left-color: #01aa00;
 }
 
-.commented{
+#visibleLockers a .commented{
     position: absolute;
     top: -3px;
     right: -3px;
