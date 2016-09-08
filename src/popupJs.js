@@ -1,4 +1,4 @@
-(function () {
+window.onload = function(){
     // Get the modal
     var modal = document.getElementById('myModal');
 
@@ -30,6 +30,6 @@
     var name = document.getElementById("name");
 
     editButton.onclick = function () {
-        name.readonly = false;
+        name.removeAttribute("Readonly");
     }
-})()
+}

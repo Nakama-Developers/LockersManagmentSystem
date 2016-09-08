@@ -3,7 +3,15 @@
     padding: 0;
     width: 100%;
     height: 100%;
-    background: #fff repeat url(../img/body.jpg);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: psu-font , Arial, sans-serif;
+    color: #25B6C9;
 }
 
 #mainHeader {
@@ -11,7 +19,7 @@
     top: 0;
     left: 0;
     height: auto;
-    z-index: 5;
+    z-index: 15;
     width: 100%;
     padding-top: 10px;
     background-image: url(../img/header-style.png), url(../img/psulogo.png);
@@ -19,30 +27,46 @@
     background-repeat: no-repeat, no-repeat;
 }
 
-#mainHeader button{
+/* open, close Panel Button */
+
+.panelButton{
     position: absolute;
     outline: none;
     background-color: #25B6C9;
-    padding: 0.5em;
     border: none;
+    border-bottom: 5px solid transparent;
+    padding: 0.5em;
     font-family: inherit;
     font-size: 1em;
-    font-weight: bold;
+    font-weight: 400;
     color: #FFF;
-    left: 0;
-    bottom: 0;
+    cursor: pointer;
+    left: 5px;
+    bottom: 1px;
 }
 
-img{
+.panelButton:hover{
+    font-weight: bold;
+}
+
+.pressedButton {
+    border-bottom-color: #FFF;
+    font-weight: bold;
+    transition: font-weight 1s ,border-bottom-color 1s;
+}
+
+/*******/
+
+img {
     display: block;
     margin: auto;
 }
 
-body{
-    position: relative;
-    margin:  auto;
-    font-family: psu-font , Arial, sans-serif;
-    color: #25B6C9;
+#noPanelContent{
+    height: auto;
+    width: 100%;
+    float: right;
+    background: #fff repeat url(../img/body.jpg);
 }
 
 header > h1{
@@ -54,7 +78,7 @@ header > h1{
 }
 
 #mainContent{
-    height: 100%;
+    height:auto;
     width: 80%;
     margin: auto;
     padding-top: 8%;
@@ -63,7 +87,10 @@ header > h1{
 
 #mainContent article{
     margin: 0 5%;
+    background-color: #FFF;
 }
+
+/* Lockers' Styling */
 
 #visibleLockers{
     text-align: center;
@@ -120,22 +147,37 @@ header > h1{
     border-right-color: #f12929;
 }
 
-aside{
-    background-color: #FFF;
-    position: absolute;
+/* Control Panel's styling */
+
+.controlPanel{
+    position: fixed;
     left: 0;
+    border-right: solid #25B6C9 1px;
+    box-shadow: 1px 0 8px 0 #25B6C9;
+    background-color: #fff;
     height: 100%;
-    bottom: 0;
-    width: 0;
+    z-index: 10;
+    width: 0%;
+    transition: width .8s;
+    -webkit-transition: width .8s;
 }
 
-footer{
+.openPanel{
+    width: 20%;
+    height: 100%;
+    transition: width .5s;
+    -webkit-transition: width .5s;
+}
+
+/* Navegation through lockers links */
+
+#mainContentFooter{
     text-align: center;
     margin-top: 20px;
     padding-bottom: 20px;
 }
 
-footer nav a{
+#mainContentFooter nav a{
     display: inline-block;
     text-decoration: none;
     font-weight: bold;
