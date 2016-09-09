@@ -30,6 +30,11 @@ window.onload = function(){
     var name = document.getElementById("name");
 
     editButton.onclick = function () {
-        name.removeAttribute("Readonly");
+         name.removeAttribute("Readonly");
+        ID.removeAttribute("Readonly");
+        Email.removeAttribute("Readonly");
+        number.removeAttribute("Readonly");
+        comment.removeAttribute("Readonly");
+        editButton.innerHTML = "Save"; 
     }
 }
