@@ -1,4 +1,4 @@
-window.onload = function(){
+window.onload = function () {
     // Get the modal
     var modal = document.getElementById('myModal');
 
@@ -28,17 +28,8 @@ window.onload = function(){
     var editButton = document.getElementById("editButton");
 
     var name = document.getElementById("name");
-    var ID = document.getElementById("ID");
-    var Email = document.getElementById("e-mail");
-    var number = document.getElementById("mobileNumber");
-    var comment = document.getElementById("comments");
 
     editButton.onclick = function () {
         name.removeAttribute("Readonly");
-        ID.removeAttribute("Readonly");
-        Email.removeAttribute("Readonly");
-        number.removeAttribute("Readonly");
-        comment.removeAttribute("Readonly");
-        editButton.innerHTML = "Save"; 
-    }
+    };
 }

@@ -2,13 +2,14 @@
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
+    height: auto;
+    background: #fff repeat url(../img/body.jpg);
 }
 
 body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: auto;
     width: 100%;
     font-family: psu-font , Arial, sans-serif;
     color: #25B6C9;
@@ -21,7 +22,7 @@ body {
     height: auto;
     z-index: 15;
     width: 100%;
-    padding-top: 10px;
+    padding: 10px 0;
     background-image: url(../img/header-style.png), url(../img/psulogo.png);
     background-color: #25B6C9;
     background-repeat: no-repeat, no-repeat;
@@ -34,14 +35,14 @@ body {
     outline: none;
     background-color: #25B6C9;
     border: none;
-    border-bottom: 5px solid transparent;
-    padding: 0.5em;
+    border-bottom: 3px solid transparent;
+    padding: 0.7em;
     font-family: inherit;
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: 400;
     color: #FFF;
     cursor: pointer;
-    left: 5px;
+    left: 0px;
     bottom: 1px;
 }
 
@@ -51,11 +52,12 @@ body {
 
 .pressedButton {
     border-bottom-color: #FFF;
+    background-color: #15A6B9;
     font-weight: bold;
-    transition: font-weight 1s ,border-bottom-color 1s;
+    transition: background-color 1s ,border-bottom-color 1s;
 }
 
-/*******/
+/* -- others -- */
 
 img {
     display: block;
@@ -72,7 +74,7 @@ img {
 header > h1{
     font-size: 2em;
     font-weight: 100;
-    text-shadow: 1px 3px 5px #25B6C9;
+    text-shadow: 1px 4px 4px #25B6C9;
 }
     header > h1 > abbr{
     font-weight: bold;
@@ -83,7 +85,7 @@ header > h1{
     height:auto;
     width: 80%;
     margin: auto;
-    padding-top: 8%;
+    padding-top: 9%;
     background-color: #FFF;
     box-shadow: 2px 0 8px 0 #ddd;
 }
@@ -91,92 +93,6 @@ header > h1{
 #mainContent article{
     margin: 0 5%;
     background-color: #FFF;
-}
-
-/* Lockers' Styling */
-
-#visibleLockers{
-    text-align: center;
-}
-
-#visibleLockers a{
-    position: relative;
-    display: inline-block;
-    height: 110px;
-    width: 110px;
-    font-size: 1.8em;
-    text-decoration: none;
-    background-color: #5FDFEF;
-    border: solid 3px #25B6C9;
-    margin: 5px;
-}
-
-    #visibleLockers a:hover{
-        transition-delay: 0.1s;
-        border-color: #d0d0d0;
-        background-color: #eee;
-    }
-
-    #visibleLockers a:active{
-        transition-delay: 0;
-        border-color: #dfdfdf;
-    }
-
-#visibleLockers a > span{
-    position: absolute;
-    color: #FFF;
-    top: 30%;
-    right: 0;
-    left:  0;
-}
-
-    #visibleLockers a:hover > span{
-        transition-delay: 0.1s;
-        color: #25B6C9;
-    }
-
-#visibleLockers a .lockerHand{
-    background-color: #25B6C9;
-    position: absolute;
-    left: 0;
-    width: 10%;
-    height: 25%;
-    top: 33%;
-    transition: height 0.5s, width 0.5;
-}
-
-    #visibleLockers a:hover .lockerHand{
-        transition-delay: 0.1s;
-        background-color: #d0d0d0;
-    }
-
-    #visibleLockers a:active .lockerHand{
-        background-color: #dfdfdf;
-        width: 8%;
-        height: 20%;
-        transition: height 0.4s, width 0.4s;
-    }
-
-#visibleLockers a .lockerStatus{
-    position: absolute;
-    top: -3px;
-    left: -3px;
-    width: 0;
-    height: 0;
-    border: solid 0.4em transparent;
-    border-top-color: #01aa00;
-    border-left-color: #01aa00;
-}
-
-#visibleLockers a .commented{
-    position: absolute;
-    top: -3px;
-    right: -3px;
-    width: 0;
-    height: 0;
-    border: solid 0.4em transparent;
-    border-top-color: #f12929;
-    border-right-color: #f12929;
 }
 
 /* Control Panel's styling */
@@ -213,6 +129,15 @@ header > h1{
     display: inline-block;
     text-decoration: none;
     font-weight: bold;
+    font-size: 0.8em;
     margin: 0 5px;
     color: inherit;
+}
+
+#mainContentFooter nav a:focus, #mainContentFooter nav a:hover{
+    font-size: 1.2em;
+}
+
+.selected {
+    font-size: 1.2em;
 }

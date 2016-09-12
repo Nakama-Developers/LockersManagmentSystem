@@ -4,191 +4,26 @@
     <meta charset="utf-16" />
     <link rel="stylesheet" type="text/css" href="style/psuFontFace.css" />
     <link rel="stylesheet" type="text/css" href="style/adminPage.css" />
-    <script src="src/adminPage.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/lockers.css">
+    <script src="scripts/data.js"></script>
     <title>PSU Locker Management System</title>
 </head>
 <body>
     <header id="mainHeader">
         <button id="panelButton" class="panelButton" >Control Panel</button>
-        <img src="img/psulogo.png" alt="PSU logo" width="330px" height="100px">
+        <img src="img/psulogo.png" alt="PSU logo" width="240.0625px" height="86.75px">
     </header>
     <div id="charts"></div>
     <div id="noPanelContent">
         <div id="mainContent">
-            <article>
+            <article id="article">
                 <header>
                     <h1><abbr title="Prince Sultan University">PSU </abbr>Lockers</h1>
                 </header>
-                    <section id="visibleLockers">
-                        <h1 style="display: none">Visible Lockers</h1>
-                        <a href="#" id="1"><span>1</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div><div class="commented"></div></a><a href="#" id="2" >
-                                    <span>2</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="3" >
-                                    <span>3</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="4" >
-                                    <span>4</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="5" >
-                                    <span>5</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="6" >
-                                    <span>6</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="7" >
-                                    <span>7</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="8" >
-                                    <span>8</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="9" >
-                                    <span>9</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="10" >
-                                    <span>10</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="11" >
-                                    <span>11</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="12" >
-                                    <span>12</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="13" >
-                                    <span>13</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="14" >
-                                    <span>14</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="15" >
-                                    <span>15</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="16" >
-                                    <span>16</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="17" >
-                                    <span>17</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="18" >
-                                    <span>18</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="19" >
-                                    <span>19</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="20" >
-                                    <span>20</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="21" >
-                                    <span>21</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="22" >
-                                    <span>22</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="23" >
-                                    <span>23</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="24" >
-                                    <span>24</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="25" >
-                                    <span>25</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="26" >
-                                    <span>26</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="27" >
-                                    <span>27</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="28" >
-                                    <span>28</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="29" >
-                                    <span>29</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="30" >
-                                    <span>30</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="31" >
-                                    <span>31</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="32" >
-                                    <span>32</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="33" >
-                                    <span>33</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="34" >
-                                    <span>34</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="35" >
-                                    <span>35</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="36" >
-                                    <span>36</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="37" >
-                                    <span>37</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="38" >
-                                    <span>38</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="39" >
-                                    <span>39</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="40" >
-                                    <span>40</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="41" >
-                                    <span>41</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="42" >
-                                    <span>42</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="43" >
-                                    <span>43</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="44" >
-                                    <span>44</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="45" >
-                                    <span>45</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="46" >
-                                    <span>46</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="47" >
-                                    <span>47</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="48" >
-                                    <span>48</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="49" >
-                                    <span>49</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a><a href="#" id="50" >
-                                    <span>50</span>
-                                    <div class="lockerStatus"></div>
-                                    <div class="lockerHand"></div></a>
-                    </section>
-                <footer id="mainContentFooter">
-                    <nav>
-                        <a href=#>&#8249&#8249</a>
-                        <a href=#>&#8249</a>
-                        <a href=#>1</a>
-                        <a href=#>2</a>
-                        <a href=#>3</a>
-                        <a href=#>4</a>
-                        <a href=#>5</a>
-                        <a href=#>&#8250</a>
-                        <a href=#>&#8250&#8250</a>
-                    </nav>
-                </footer>
             </article>
         </div>
     </div>
     <aside id="controlPanel" class="controlPanel"></aside>
-    <footer></footer>
+    <script src="scripts/functions.js"></script>
 </body>
 </html>

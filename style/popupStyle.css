@@ -3,16 +3,6 @@
 div{
     display: block;
 }
-
-input{
-    alignment-adjust: central;
-    margin-right: 25px;
-    padding-right: 5px;
-    width: 250px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    }
-
 .blue-left-alignment{
     width:5px;
     height:224px;
@@ -41,7 +31,7 @@ input{
     height: 290px;
     box-shadow: 8px 12px 30px -2px rgba(0,0,0,0.31);
     border: 1px solid #ccc;
-    border-radius: 80px;
+    border-radius: 4px;
    
 }
 
@@ -73,7 +63,14 @@ input{
          padding-left: 25px;
         
 }
-
+input[readonly]{
+    alignment-adjust: central;
+    margin-right: 25px;
+    padding-right: 5px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    }
 .comment{
     
 } 
@@ -124,7 +121,7 @@ input{
 	background:-ms-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
 	background:linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cbf2a', endColorstr='#44c767',GradientType=0);
-	
+	background-color:#;
 }
 .availableButton:active {
 	position:relative;

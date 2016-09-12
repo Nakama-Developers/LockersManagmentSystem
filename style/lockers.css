@@ -1,0 +1,104 @@
+/* Lockers' Styling */
+
+.visibleLockers{
+    text-align: center;
+    display:  none;
+}
+
+.visibleLockers .locker{
+    position: relative;
+    display: inline-block;
+    height: 110px;
+    width: 110px;
+    font-size: 1.8em;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #5FDFEF;
+    border: solid 3px #25B6C9;
+    margin: 5px;
+}
+
+    .visibleLockers .locker:hover{
+        transition-delay: 0.1s;
+        border-color: #d0d0d0;
+        background-color: #eee;
+    }
+
+    .visibleLockers .locker:active{
+        transition-delay: 0;
+        border-color: #dfdfdf;
+    }
+
+.visibleLockers .locker > span{
+    position: absolute;
+    color: #FFF;
+    top: 30%;
+    right: 0;
+    left:  0;
+    user-select: none;
+}
+
+    .visibleLockers .locker:hover > span{
+        transition-delay: 0.1s;
+        color: #25B6C9;
+    }
+
+    .locker span::selection{
+        background: inherit;
+        color: inherit;
+    }
+
+.visibleLockers .locker .lockerHand{
+    background-color: #25B6C9;
+    position: absolute;
+    left: 0;
+    width: 10%;
+    height: 25%;
+    top: 33%;
+    transition: height 0.25s, width 0.25s;
+}
+
+    .visibleLockers .locker:hover .lockerHand{
+        transition-delay: 0.1s;
+        background-color: #d0d0d0;
+        transition: background-color 0s 0.1s;
+    }
+
+    .visibleLockers .locker:active .lockerHand{
+        background-color: #dfdfdf;
+        width: 8%;
+        height: 20%;
+        transition: height 0.3s, width 0.3s;
+    }
+
+.visibleLockers .locker .lockerStatus{
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 0;
+    height: 0;
+    border: solid 0.4em transparent;
+    border-top-color: #01aa00; /* By default the locker is availabe (green) */
+    border-left-color: #01aa00;
+}
+
+.reserved{
+    border-top-color: #005781 !important;
+    border-left-color: #005781 !important;
+}
+
+.maintainance{
+    border-top-color: #FAB900 !important;
+    border-left-color: #FAB900 !important;
+}
+
+.visibleLockers .locker .commented{
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 0;
+    height: 0;
+    border: solid 0.4em transparent;
+    border-top-color: #E84747;
+    border-right-color: #E84747;
+}
