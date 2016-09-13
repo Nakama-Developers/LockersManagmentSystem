@@ -1,5 +1,6 @@
 // # lockers Per Page 
 var numVisiblelockers = 50;
+var displayedNavLinks = 6;
 
 // locker object
 function locker(id, comment, status){
@@ -13,7 +14,7 @@ var lockers = [];
 // TODO: connecting to DB and loading Data.
 
 /*    Demo  */
-var lockerNum = 233;
+var lockerNum = 555;
 for (var i = 0; i < lockerNum; i++) {
     if (i % 2 == 0) {
         lockers[i] = new locker(i, 'blabla', 'reserved');
@@ -39,11 +40,15 @@ window.onload = function () {
     }
 
     // Printing Nav tags.
-    var links = '</section><footer id="mainContentFooter"><nav id="navLinks"><a class="navLink" id="postPrev" href="#">&#8249&#8249</a><a class="navLink" id="prev" href="#">&#8249</a>';
+    var links = '</section><footer id="mainContentFooter"><nav id="navLinks"><a class="navLink" id="postPrev">&#8249&#8249</a><a class="navLink" id="prev">&#8249</a>';
     for (var i = 1; i <= numSections; i++) {
-        links += '<a class="navLink" href="#">' + i + '</a>';
+        if (i <= displayedNavLinks) {
+            links += '<a class="navLink" id="navLink' + i + '">' + i + '</a>';
+        } else {
+            links += '<a class="navLink" id="navLink' + i + '" style="display: none">' + i + '</a>';
+        }
     }
-    links += '<a class="navLink" id="next" href="#">&#8250</a><a class="navLink" id="postNext">&#8250&#8250</a></nav></footer>';
+    links += '<a class="navLink" id="next">&#8250</a><a class="navLink" id="postNext">&#8250&#8250</a></nav></footer>';
     article.innerHTML += links;
 
     /*****************
@@ -92,9 +97,10 @@ window.onload = function () {
             }
         }
     }
-    
+
     document.getElementById('section1').style.display = 'block';
     var displayedSection = 1;
+    var selectedLink = 2;
 
     /* Navigation links functions */
     var navLinks = document.getElementsByClassName('navLink');
@@ -102,10 +108,50 @@ window.onload = function () {
     for (var i = 2; i < limit; i++) {
         (function (i) {
             navLinks[i].addEventListener("click", function () {
+                navLinks[i].className += ' selected';
+                navLinks[selectedLink].className = 'navLink';
+                selectedLink = i;
+                if (navLinks[selectedLink].nextSibling.style.display === 'none') {
+                    slideLinksForward();
+                } else if (navLinks[selectedLink].previousSibling.style.display === 'none') {
+                    slideLinksBackward();
+                }
                 document.getElementById('section' + displayedSection).style.display = "none";
                 document.getElementById('section' + (i - 1)).style.display = "block";
                 displayedSection = i - 1;
             });
         })(i);
+    }
+
+    // Post Previous link.
+    document.getElementById('postPrev').addEventListener('click', function () {
+        document.getElementById('prev').click();
+        document.getElementById('prev').click();
+    });
+
+    // Previous link.
+    document.getElementById('prev').addEventListener('click', function () {
+        navLinks[selectedLink].previousSibling.click();
+    });
+
+    // Next Link.
+    document.getElementById('next').addEventListener('click', function () {
+        navLinks[selectedLink].nextSibling.click();
+    });
+
+    // Post Next Link.
+    document.getElementById('postNext').addEventListener('click', function () {
+        document.getElementById('next').click();
+        document.getElementById('next').click();
+    });
+
+    function slideLinksForward() {
+        navLinks[selectedLink + 1].style.display = 'inline-block';
+        navLinks[selectedLink - 5].style.display = 'none';
+    }
+
+    function slideLinksBackward() {
+        navLinks[selectedLink - 1].style.display = 'inline-block';
+        navLinks[selectedLink + 5].style.display = 'none';
     }
 }

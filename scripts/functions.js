@@ -8,7 +8,7 @@ panelButton.addEventListener("click", function () {
     if (!isPanelOpen) {
         controlPanel.className += " openPanel";
         noPanelContent.style.width = "80%";
-        noPanelContent.style.transition = "width .5s"
+        noPanelContent.style.transition = "width .5s";
         panelButton.className += " pressedButton";
         panelButton.textContent = "Remove Panel"
         isPanelOpen = true;
