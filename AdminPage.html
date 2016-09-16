@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="style/psuFontFace.css" />
     <link rel="stylesheet" type="text/css" href="style/adminPage.css" />
     <link rel="stylesheet" type="text/css" href="style/lockers.css">
+    <link rel="stylesheet" type="text/css" href="style/popupStyle.css">
     <script src="scripts/data.js"></script>
     <title>PSU Locker Management System</title>
 </head>
@@ -23,6 +24,63 @@
             </article>
         </div>
     </div>
+
+    <!-- The POPUP -->
+
+    <button id="myBtn">Open Modal</button>
+
+                <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-status" id="model-status"></div>
+                <div class="modal-comments" id="model-comments"></div>
+                <div class="modal-header">
+                    <span class="close">×</span> <!-- this is just for closing the popup when clicking outside-->
+                    <h2 class="number" id="lockerNumber">68</h2>          
+                </div>
+            <div class="modal-body">
+                <form>
+                <table>
+                <tr> 
+                    <th>Full Name:</th>
+                    <td><input readonly="readonly" id="name" type="text"></td>
+                </tr>
+                <tr>
+                    <th>Student ID:</th>
+                    <td><input readonly="readonly" id="ID" type="text"></td>
+                </tr>
+                <tr>
+                    <th>E-mail:</th>
+                    <td><input readonly="readonly" id="e-mail" type="email"></td>
+                </tr>
+                <tr>
+                    <th>Mobile Number:</th>
+                    <td><input readonly="readonly" id="mobileNumber" type="text"></td>
+                </tr>
+                 <tr>
+                    <th>Comments:</th>
+                    <td><input readonly="readonly" id="comments"type="text"></td>
+                </tr>     
+                </table>
+                </form>  
+            </div>
+           
+            <div class="modal-footer">
+                <table>
+                <tr>
+                <td><a id="editButton"  class="editButton" onclick="edit">Edit</a></td>
+                <td><a id="availableButton"  class="availableButton">Available</a></td>
+                <td><a id="reservedButton"  class="reservedButton">Reserved</a></td>
+                <td><a id="maintenanceButton"  class="maintenanceButton">Under Maintenance</a></td>
+                </tr>
+                </table>
+            </div>
+            </div>
+         </div>
+
+
     <aside id="controlPanel" class="controlPanel"></aside>
     <script src="scripts/functions.js"></script>
 </body>
