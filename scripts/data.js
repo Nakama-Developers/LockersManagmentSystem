@@ -178,12 +178,15 @@ window.onload = function () {
     // When the user clicks on the button, open the modal 
     var cells = document.getElementById('article').getElementsByTagName('a');
     var lockerNumber = document.getElementById("lockerNumber");
-    for (var i = 0, n = cells.length; i < n; i++) {
-        cells[i].onclick = function () {
-            lockerNumber.innerHTML = '<h2 class="number" id="lockerNumber">' + cells[i].id + '</h2>';
-            modal.style.display = "block";
+    for (var i = 0,n = cells.length; i < n; i++) {
+        (function (i) {
+            cells[i].onclick = function () {
+                lockerNumber.innerHTML = '<h2 class="number" id="lockerNumber">' + (i+1) + '</h2>';
+                modal.style.display = "block";
+            }
+        })(i);
 
-        }
+
 
     }
 
