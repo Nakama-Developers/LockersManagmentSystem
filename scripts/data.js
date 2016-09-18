@@ -168,12 +168,11 @@ window.onload = function () {
     var span = document.getElementsByClassName("close")[0];
 
     // When the user clicks on the button, open the modal 
-    var cells = document.getElementById('section').getElementsByTagName('a');
+    var cells = document.getElementById('article').getElementsByTagName('a');
     for (var i = 0, n = cells.length; i < n; i++) {
         cells[i].onclick = function () {
             modal.style.display = "block";
         }
-
 
     }
 
