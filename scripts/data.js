@@ -167,11 +167,22 @@ window.onload = function () {
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
+    /* set the locker number
+   
+    for (var i = 1; i <= 555; i++) {
+    lockerNumber.innerHTML = i;
+    }*/
+
+
+
     // When the user clicks on the button, open the modal 
     var cells = document.getElementById('article').getElementsByTagName('a');
+    var lockerNumber = document.getElementById("lockerNumber");
     for (var i = 0, n = cells.length; i < n; i++) {
         cells[i].onclick = function () {
+            lockerNumber.innerHTML = '<h2 class="number" id="lockerNumber">' + cells[i].id + '</h2>';
             modal.style.display = "block";
+
         }
 
     }
@@ -191,11 +202,20 @@ window.onload = function () {
     var editButton = document.getElementById("editButton");
 
     var name = document.getElementById("name");
+    var ID = document.getElementById("ID");
+    var Email = document.getElementById("e-mail");
+    var number = document.getElementById("mobileNumber");
+    var comment = document.getElementById("comments");
 
     editButton.onclick = function () {
         name.removeAttribute("Readonly");
-    };
+        ID.removeAttribute("Readonly");
+        Email.removeAttribute("Readonly");
+        number.removeAttribute("Readonly");
+        comment.removeAttribute("Readonly");
+        editButton.innerHTML = "Save";
+    }
 
 
-    
+
 }
