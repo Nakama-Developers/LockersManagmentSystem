@@ -25,7 +25,7 @@
     }
 
     .visibleLockers .locker:active{
-        transition-delay: 0;
+        transition: none;
         border-color: #dfdfdf;
     }
 
@@ -87,7 +87,7 @@
     border-left-color: #005781 !important;
 }
 
-.maintainance{
+.maintenance{
     border-top-color: #FAB900 !important;
     border-left-color: #FAB900 !important;
 }

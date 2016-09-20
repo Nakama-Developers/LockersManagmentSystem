@@ -10,7 +10,7 @@ panelButton.addEventListener("click", function () {
         noPanelContent.style.width = "80%";
         noPanelContent.style.transition = "width .5s";
         panelButton.className += " pressedButton";
-        panelButton.textContent = "Remove Panel"
+        panelButton.textContent = "Close Panel"
         isPanelOpen = true;
     }
     else {
