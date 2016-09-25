@@ -19,7 +19,7 @@ for (var i = 0; i < lockerNum; i++) {
     if (i % 2 == 0) {
         lockers[i] = new locker(i, 'blabla', 'reserved');
     } else {
-        lockers[i] = new locker(i, 'blabla', 'maintainance');
+        lockers[i] = new locker(i, 'blabla', 'maintenance');
     }
     if (i % 10 == 0) {
         lockers[i] = new locker(i);
@@ -60,37 +60,14 @@ window.onload = function () {
         for (var j = 0; j < numVisiblelockers; j++) {
             var currentLocker = lockers[numPrintedLockers];
             numPrintedLockers++;
-            if (currentLocker.status === 'reserved') {
-                if (currentLocker.comment !== null) {
-                    section.innerHTML +=
-                    '<a class="locker" id="locker' + numPrintedLockers + '" ><span>' + numPrintedLockers + '</span><div class="lockerStatus reserved"></div>' +
+            if (currentLocker.comment != null) {
+                section.innerHTML +=
+                    '<a class="locker" id="locker' + numPrintedLockers + '" ><span>' + numPrintedLockers + '</span><div class="lockerStatus ' + currentLocker.status + '"></div>' +
                     '<div class="commented"></div><div class="lockerHand"></div></a>';
-                }
-                else {
-                    section.innerHTML +=
-                    '<a class="locker" id="locker' + numPrintedLockers + '" ><span>' + numPrintedLockers + '</span><div class="lockerStatus reserved"></div><div class="lockerHand"></div></a>';
-                }
-            } else if (currentLocker.status === 'maintainance') {
-                if (currentLocker.comment != null) {
-                    section.innerHTML +=
-                    '<a class="locker" id="locker' + numPrintedLockers + '" ><span>' + numPrintedLockers + '</span><div class="lockerStatus maintainance"></div>' +
-                    '<div class="commented"></div><div class="lockerHand"></div></a>';
-                }
-                else {
-                    section.innerHTML +=
-                    '<a class="locker" id="locker' + numPrintedLockers + '" ><span>' + numPrintedLockers + '</span><div class="lockerStatus maintainance"></div><div class="lockerHand"></div></a>';
-                }
             }
             else {
-                if (currentLocker.comment != null) {
-                    section.innerHTML +=
-                    '<a class="locker" id="locker' + numPrintedLockers + '" ><span>' + numPrintedLockers + '</span><div class="lockerStatus"></div>' +
-                    '<div class="commented"></div><div class="lockerHand"></div></a>';
-                }
-                else {
-                    section.innerHTML +=
-                    '<a class="locker" id="locker' + numPrintedLockers + '" ><span>' + numPrintedLockers + '</span><div class="lockerStatus"></div><div class="lockerHand"></div></a>';
-                }
+                section.innerHTML +=
+                    '<a class="locker" id="locker' + numPrintedLockers + '" ><span>' + numPrintedLockers + '</span><div class="lockerStatus ' + currentLocker.status + '"></div><div class="lockerHand"></div></a>';
             }
             if (numPrintedLockers === numLockers) {
                 break;
@@ -161,64 +138,88 @@ window.onload = function () {
     // Get the modal
     var modal = document.getElementById('myModal');
 
-    // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
+    // When the user clicks on a locker, open the modal
+    var allLockers = document.getElementsByClassName('locker');
+    var defaultComment = 'No Comment';
+
+    for (var i = 0; i < allLockers.length; i++) {
+        (function (i) {
+            allLockers[i].addEventListener('click', function () {
+                modal.style.display = "block";
+                var id = allLockers[i].getElementsByTagName('span')[0].textContent;
+                document.getElementById('lockerID').textContent = id;
+                var lockerStatus = lockers[id - 1].status;
+                var prevLockerState = document.getElementById('currentStatus').getElementsByTagName('span')[0].textContent;
+                if (lockerStatus != null) {
+                    document.getElementById('currentStatus').className = 'statusOptions ' + lockerStatus + 'Status';
+                    document.getElementById('currentStatus').getElementsByTagName('span')[0].textContent = lockerStatus;
+                    document.getElementsByClassName(lockerStatus + 'Option')[0].textContent = prevLockerState;
+                    document.getElementsByClassName(lockerStatus + 'Option')[0].className = 'statusOptions ' + prevLockerState + 'Option';
+                } else {
+                    if (prevLockerState != 'available') {
+                        document.getElementById('currentStatus').className = 'statusOptions availableStatus';
+                        document.getElementById('currentStatus').getElementsByTagName('span')[0].textContent = 'available';
+                        document.getElementsByClassName('availableOption')[0].textContent = prevLockerState;
+                        document.getElementsByClassName('availableOption')[0].className = 'statusOptions ' + prevLockerState + 'Option';
+                    }
+                }
+                if (lockers[id - 1].comment != null) {
+                    document.getElementById('comment').textContent = lockers[id - 1].comment;
+                } else {
+                    document.getElementById('comment').textContent = defaultComment;
+                }
+            });
+        })(i);
+    }
+
+    var inputs = document.getElementById('inputs').getElementsByTagName('input');
+    var editBtn = document.getElementsByClassName('editBtn')[0];
+    var saveBtn = document.getElementsByClassName('saveBtn')[0];
+    var commentSection = document.getElementById('comment');
+    var isEditMode = false;
+
+    editBtn.addEventListener('click', function () {
+        editBtn.style.display = 'none';
+        saveBtn.style.display = 'block';
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].removeAttribute("Readonly");
+        }
+        commentSection.removeAttribute("Readonly");
+        if (commentSection.textContent == defaultComment) {
+            commentSection.textContent = '';
+        }
+    });
+
+    saveBtn.addEventListener('submit', function () {
+        removeEditMode();
+    });
 
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
-    /* set the locker number
-   
-    for (var i = 1; i <= 555; i++) {
-    lockerNumber.innerHTML = i;
-    }*/
-
-
-
-    // When the user clicks on the button, open the modal 
-    var cells = document.getElementById('article').getElementsByTagName('a');
-    var lockerNumber = document.getElementById("lockerNumber");
-    for (var i = 0,n = cells.length; i < n; i++) {
-        (function (i) {
-            cells[i].onclick = function () {
-                lockerNumber.innerHTML = '<h2 class="number" id="lockerNumber">' + (i+1) + '</h2>';
-                modal.style.display = "block";
-            }
-        })(i);
-
-
-
-    }
-
     // When the user clicks on <span> (x), close the modal
     span.onclick = function () {
+        removeEditMode();
         modal.style.display = "none";
     }
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
         if (event.target == modal) {
+            removeEditMode();
             modal.style.display = "none";
         }
     }
 
-    var editButton = document.getElementById("editButton");
-
-    var name = document.getElementById("name");
-    var ID = document.getElementById("ID");
-    var Email = document.getElementById("e-mail");
-    var number = document.getElementById("mobileNumber");
-    var comment = document.getElementById("comments");
-
-    editButton.onclick = function () {
-        name.removeAttribute("Readonly");
-        ID.removeAttribute("Readonly");
-        Email.removeAttribute("Readonly");
-        number.removeAttribute("Readonly");
-        comment.removeAttribute("Readonly");
-        editButton.innerHTML = "Save";
+    function removeEditMode() {
+        saveBtn.style.display = 'none';
+        editBtn.style.display = 'block';
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].setAttribute("Readonly", "Readonly");
+        }
+        commentSection.setAttribute("Readonly", "Readonly");
+        if (commentSection.textContent == '') {
+            commentSection.textContent = defaultComment;
+        }
     }
-
-
-
 }

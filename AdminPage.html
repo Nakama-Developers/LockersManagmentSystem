@@ -1,87 +1,83 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-16" />
-    <link rel="stylesheet" type="text/css" href="style/psuFontFace.css" />
-    <link rel="stylesheet" type="text/css" href="style/adminPage.css" />
-    <link rel="stylesheet" type="text/css" href="style/lockers.css">
-    <link rel="stylesheet" type="text/css" href="style/popupStyle.css">
-    <script src="scripts/data.js"></script>
-    <title>PSU Locker Management System</title>
-</head>
-<body>
-    <header id="mainHeader">
-        <button id="panelButton" class="panelButton" >Control Panel</button>
-        <img src="img/psulogo.png" alt="PSU logo" width="240.0625px" height="86.75px">
-    </header>
-    <div id="charts"></div>
-    <div id="noPanelContent">
-        <div id="mainContent">
-            <article id="article">
-                <header>
-                    <h1><abbr title="Prince Sultan University">PSU </abbr>Lockers</h1>
-                </header>
-            </article>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="style/psuFontFace.css" />
+        <link rel="stylesheet" type="text/css" href="style/adminPage.css" />
+        <link rel="stylesheet" type="text/css" href="style/lockers.css">
+        <link type="text/css" rel="stylesheet" href="style/lockerInfo.css" >
+        <script src="scripts/data.js"></script>
+        
+        <title>Prototype</title>
+    </head>
+    <body>
+
+        <header id="mainHeader">
+            <button id="panelButton" class="panelButton" >Control Panel</button>
+            <img src="img/psulogo.png" alt="PSU logo" width="240.0625px" height="86.75px">
+        </header>
+        <div id="charts"></div>
+        <div id="noPanelContent">
+            <div id="mainContent">
+                <article id="article">
+                    <header>
+                        <h1><abbr title="Prince Sultan University">PSU </abbr>Lockers</h1>
+                    </header>
+                </article>
+            </div>
         </div>
-    </div>
+        <aside id="controlPanel" class="controlPanel"></aside>
 
-    <!-- The POPUP -->
-
-    <button id="myBtn">Open Modal</button>
-
-                <!-- The Modal -->
+        <!-- The Modal -->
         <div id="myModal" class="modal">
 
-                <!-- Modal content -->
-            <div class="modal-content">
-                <div class="modal-status" id="model-status"></div>
-                <div class="modal-comments" id="model-comments"></div>
-                <div class="modal-header">
-                    <span class="close">×</span> <!-- this is just for closing the popup when clicking outside-->
-                    <h2 class="number" id="lockerNumber">68</h2>          
-                </div>
-            <div class="modal-body">
-                <form>
-                <table>
-                <tr> 
-                    <th>Full Name:</th>
-                    <td><input readonly="readonly" id="name" type="text"></td>
-                </tr>
-                <tr>
-                    <th>Student ID:</th>
-                    <td><input readonly="readonly" id="ID" type="text"></td>
-                </tr>
-                <tr>
-                    <th>E-mail:</th>
-                    <td><input readonly="readonly" id="e-mail" type="email"></td>
-                </tr>
-                <tr>
-                    <th>Mobile Number:</th>
-                    <td><input readonly="readonly" id="mobileNumber" type="text"></td>
-                </tr>
-                 <tr>
-                    <th>Comments:</th>
-                    <td><input readonly="readonly" id="comments"type="text"></td>
-                </tr>     
-                </table>
-                </form>  
-            </div>
-           
-            <div class="modal-footer">
-                <table>
-                <tr>
-                <td><a id="editButton"  class="editButton" onclick="edit">Edit</a></td>
-                <td><a id="availableButton"  class="availableButton">Available</a></td>
-                <td><a id="reservedButton"  class="reservedButton">Reserved</a></td>
-                <td><a id="maintenanceButton"  class="maintenanceButton">Under Maintenance</a></td>
-                </tr>
-                </table>
-            </div>
-            </div>
+            <!-- Modal content -->
+            <article class="modal-content">
+                <header class="modal-header">
+                    <span class="close">×</span><!-- this is just for closing the popup when clicking outside-->
+                    <h2 id="lockerID"></h2>          
+                </header>
+                <section class="modal-body">
+                    <form action="#">
+                        <ul>
+                            <li id="labels">
+                                <ul>
+                                    <li><label for="name">Name:</label></li>
+                                    <li><label for="ID">Student ID:</label></li>
+                                    <li><label for="email">e-mail:</label></li>
+                                    <li><label for="mobileNumber">Phone:</label></li>
+                                </ul>
+                            </li>
+                            <li id="inputs">
+                                <ul>
+                                    <li><input name="fullName" id="name" type="text" title="Please, write the full Name" autofocus="true" placeholder="e.g. Ala'a Ezziddin" value="Ala'a Ezziddin" readonly="readonly" required></li>
+                                    <li><input name="studentId" id="ID" type="text" title="Please, Enter the student's PSU ID" placeholder="e.g. 212210282" value="212210282" readonly="readonly" required></li>
+                                    <li><input name="email" id="email" type="email" title="Please, Enter the student's email" placeholder="e.g. name@example.com" value="alaa.ezziddin.aae@gmail.com" readonly="readonly"></li>
+                                    <li><input name="phone" id="mobileNumber" type="number" pattern="[0-9]{3}[-][0-9]{3}[-][0-9]{4}" title="Enter the student's mobile phone Number if available" placeholder="e.g. 000-000-0000" value="0537514186" readonly="readonly"></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div >
+                            <textarea name="comment" id="comment" placeholder="Type your comment..." maxlength="250" tabindex="8" readonly>No Comment</textarea>
+                            <div id="buttons">
+                                <input type="submit" class="saveBtn" value="Save">
+                                <a class="editBtn" href="#">Edit</a>
+                                <ul>
+                                    <li class="statusOptions availableStatus" id="currentStatus"><span>available</span>
+                                        <input type="button" name="status" id="statusBtn" value="available" hidden>
+                                        <ul id="allStatus">
+                                            <li><a class="statusOptions reservedOption">reserved</a></li>
+                                            <li><a class="statusOptions maintenanceOption">maintenance</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </article>
          </div>
-
-
-    <aside id="controlPanel" class="controlPanel"></aside>
-    <script src="scripts/functions.js"></script>
-</body>
+        <script src="scripts/functions.js"></script>
+    </body>
 </html>
