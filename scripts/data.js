@@ -148,6 +148,7 @@ window.onload = function () {
                 modal.style.display = "block";
                 var id = allLockers[i].getElementsByTagName('span')[0].textContent;
                 document.getElementById('lockerID').textContent = id;
+                document.getElementById('lockerIdValue').value = id;
                 var lockerStatus = lockers[id - 1].status;
                 var prevLockerState = document.getElementById('currentStatus').getElementsByTagName('span')[0].textContent;
                 if (lockerStatus != null) {
