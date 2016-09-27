@@ -10,7 +10,7 @@
     $dbHost= 'localhost'; 
     $dbUser = 'root';
     $dbPass = '';
-    $dbName = 'lockers_system';
+    $dbName = 'lockers_managment_system';
 
     // connecting to the server
     $conn = mysqli_connect($dbHost, $dbUser, $dbPass); 
