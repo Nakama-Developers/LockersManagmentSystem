@@ -39,7 +39,7 @@
                     <h2 id="lockerID"></h2>          
                 </header>
                 <section class="modal-body">
-                    <form action="#">
+                    <form action="php/dataSubmit.php" method="post">
                         <input type="text" id="lockerIdValue" hidden>
                         <ul>
                             <li id="labels">
@@ -62,7 +62,7 @@
                         <div >
                             <textarea name="comment" id="comment" placeholder="Type your comment..." maxlength="250" tabindex="8" readonly>No Comment</textarea>
                             <div id="buttons">
-                                <input type="submit" class="saveBtn" value="Save">
+                                <input type="submit" class="saveBtn" value="Save" name="submitBtn">
                                 <a class="editBtn" href="#">Edit</a>
                                 <ul>
                                     <li class="statusOptions availableStatus" id="currentStatus"><span>available</span>
