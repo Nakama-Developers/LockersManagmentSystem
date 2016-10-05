@@ -7,8 +7,7 @@
         <link rel="stylesheet" type="text/css" href="style/adminPage.css" />
         <link rel="stylesheet" type="text/css" href="style/lockers.css">
         <link type="text/css" rel="stylesheet" href="style/lockerInfo.css" >
-        <script src="scripts/data.js"></script>
-        
+        <script src="scripts/events.js"></script>
         <title>Admin Page</title>
     </head>
     <body>
@@ -17,7 +16,6 @@
             <button id="panelButton" class="panelButton" >Control Panel</button>
             <img src="img/psulogo.png" alt="PSU logo" width="240.0625px" height="86.75px">
         </header>
-        <div id="charts"></div>
         <div id="noPanelContent">
             <div id="mainContent">
                 <article id="article">
@@ -35,12 +33,12 @@
             <!-- Modal content -->
             <article class="modal-content">
                 <header class="modal-header">
-                    <span class="close">×</span><!-- The x button -->
+                    <span class="close">×</span>
                     <h2 id="lockerID"></h2>          
                 </header>
                 <section class="modal-body">
-                    <form action="php/dataSubmit.php" method="post">
-                        <input type="text" id="lockerIdValue" hidden>
+                    <form id="ownerInfoForm" action="php/dataSubmit.php" method="post">
+                        <input type="text" name="lockerIdValue" id="lockerIdValue" hidden>
                         <ul>
                             <li id="labels">
                                 <ul>
@@ -62,7 +60,7 @@
                         <div >
                             <textarea name="comment" id="comment" placeholder="Type your comment..." maxlength="250" tabindex="8" readonly>No Comment</textarea>
                             <div id="buttons">
-                                <input type="submit" class="saveBtn" value="Save" name="submitBtn">
+                                <input type="submit" class="saveBtn" value="Save" name="btn">
                                 <a class="editBtn" href="#">Edit</a>
                                 <ul>
                                     <li class="statusOptions availableStatus" id="currentStatus"><span>available</span>
@@ -79,6 +77,7 @@
                 </section>
             </article>
          </div>
-        <script src="scripts/functions.js"></script>
+        <script src="scripts/loadLockers.js"></script>
+        <script src="scripts/loadLocalEvents.js"></script>
     </body>
 </html>

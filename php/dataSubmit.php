@@ -9,9 +9,12 @@
 
     $insertQuery = "INSERT INTO students (Student_ID, Name, Phone, Email) VALUES ('$studentId', '$fullName', '$phone', '$email')";
 
+    /* 
+    NO NEED ANYMORE
     if ($_POST['submitBtn']) 
         mysqli_query($conn, $insertQuery) or die(mysqli_error($conn));
 
          header('location: ../AdminPage.Html');
+    */
 ?>
 
