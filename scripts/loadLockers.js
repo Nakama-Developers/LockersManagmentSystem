@@ -1,4 +1,17 @@
 // Determine the number of sections needed.
+
+var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://localhost:64924/php/LockersData.php', true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                var status = xhr.status;
+                if (status >= 200 && status < 300) {
+                    var obj = JSON.parse(xhr.response);
+                } else {
+                }
+            }
+        }
+        xhr.send();
 var article = document.getElementsByTagName('article')[0];
 var numLockers = lockers.length;
 var numSections = numLockers / numVisiblelockers;

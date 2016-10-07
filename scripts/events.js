@@ -17,12 +17,12 @@ var lockers = [];
 var lockerNum = 555;
 for (var i = 0; i < lockerNum; i++) {
     if (i % 2 == 0) {
-        lockers[i] = new locker(i, 'blabla', 'reserved');
+        lockers[i] = new locker(i, 'blabla', 'Reserved');
     } else {
-        lockers[i] = new locker(i, 'blabla', 'maintenance');
+        lockers[i] = new locker(i, 'blabla', 'Maintenance');
     }
     if (i % 10 == 0) {
-        lockers[i] = new locker(i, null, 'available');
+        lockers[i] = new locker(i, null, 'Available');
     }
 }
 /* End Demo */

@@ -78,18 +78,21 @@
     width: 0;
     height: 0;
     border: solid 0.4em transparent;
-    border-top-color: #01aa00; /* By default the locker is availabe (green) */
+}
+
+.visibleLockers .locker .Available{
+    border-top-color: #01aa00;
     border-left-color: #01aa00;
 }
 
-.reserved{
-    border-top-color: #005781 !important;
-    border-left-color: #005781 !important;
+.visibleLockers .locker .Reserved{
+    border-top-color: #005781;
+    border-left-color: #005781;
 }
 
-.maintenance{
-    border-top-color: #FAB900 !important;
-    border-left-color: #FAB900 !important;
+.visibleLockers .locker .Maintenance{
+    border-top-color: #FAB900;
+    border-left-color: #FAB900;
 }
 
 .visibleLockers .locker .commented{
