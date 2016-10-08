@@ -97,12 +97,12 @@ textarea[readonly]{
     border-right: 5px solid transparent;
 }
 
-.reservedOption:hover{
+.ReservedOption:hover{
     color: #005781;
     border-right: 5px solid #005781 !important;
 }
 
-.reservedStatus{
+.ReservedStatus{
     color: #005781;
     border-right: 5px solid #005781 !important;
 }
@@ -113,22 +113,22 @@ textarea[readonly]{
     border-bottom-left-radius: 5px;
 }
 
-.maintenanceOption:hover{
+.MaintenanceOption:hover{
     color: #FAB900;
     border-right: 5px solid #FAB900 !important;
 }
 
-.maintenanceStatus{
+.MaintenanceStatus{
     color: #FAB900;
     border-right: 5px solid #FAB900 !important;
 }
 
-.availableOption:hover{
+.AvailableOption:hover{
     border-right: 5px solid #01AA00 !important;
     color: #01AA00;
 }
 
-.availableStatus{
+.AvailableStatus{
     border-right: 5px solid #01AA00; /* By default the locker is available */
     color: #01AA00;
 }

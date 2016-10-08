@@ -34,30 +34,40 @@ var defaultComment = 'No Comment';
 for (var i = 0; i < allLockers.length; i++) {
     (function (i) {
         allLockers[i].addEventListener('click', function () {
-            modal.style.display = "block";
             var id = allLockers[i].getElementsByTagName('span')[0].textContent;
             document.getElementById('lockerID').textContent = id;
             document.getElementById('lockerIdValue').value = id;
             var currentStatusElement = document.getElementById('currentStatus');
             //------------------- This variables are used to alter between menu values --------------------------------\\
-            var lockerStatus = lockers[id - 1].status;
-            var prevLockerState = currentStatusElement.getElementsByTagName('span')[0].textContent;
+            var lockerStatus = findlocker(id)[1];
+            var lockerComment = findlocker(id)[0];
+            var prevLockerStatus = currentStatusElement.getElementsByTagName('span')[0].textContent;
 
             //------------------- Alterring between the previous status value and the clicked one ---------------------\\
-            if (lockerStatus != null) {
-                currentStatusElement.className = 'statusOptions ' + lockerStatus + 'Status';
-                document.getElementById('statusBtn').value = lockerStatus;
-                currentStatusElement.getElementsByTagName('span')[0].textContent = lockerStatus;
-                document.getElementsByClassName(lockerStatus + 'Option')[0].textContent = prevLockerState;
-                document.getElementsByClassName(lockerStatus + 'Option')[0].className = 'statusOptions ' + prevLockerState + 'Option';
+            currentStatusElement.className = 'statusOptions ' + lockerStatus + 'Status';
+            document.getElementById('statusBtn').value = lockerStatus;
+            currentStatusElement.getElementsByTagName('span')[0].textContent = lockerStatus;
+            if (prevLockerStatus !== lockerStatus) {
+                document.getElementsByClassName(lockerStatus + 'Option')[0].textContent = prevLockerStatus;
+                document.getElementsByClassName(lockerStatus + 'Option')[0].className = 'statusOptions ' + prevLockerStatus + 'Option';
             }
-            if (lockers[id - 1].comment != null) {
-                document.getElementById('comment').textContent = lockers[id - 1].comment;
-            } else {
+            if(lockerComment !== null){
+                document.getElementById('comment').textContent = lockerComment;
+            } else{
                 document.getElementById('comment').textContent = defaultComment;
             }
+            modal.style.display = "block";
         });
     })(i);
+}
+
+function findlocker(idVal){
+    for (var i = numLockers - 1; i >= 0; i--){
+        if(lockers[i].id == idVal){
+            return [lockers[i].comment, lockers[i].status];
+        }
+    }
+    return ['error: this locker does not exist!.'];
 }
 
 var inputs = document.getElementById('inputs').getElementsByTagName('input');

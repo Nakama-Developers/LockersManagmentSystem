@@ -34,7 +34,7 @@
             <article class="modal-content">
                 <header class="modal-header">
                     <span class="close">×</span>
-                    <h2 id="lockerID"></h2>          
+                    <h2 id="lockerID">+</h2>          
                 </header>
                 <section class="modal-body">
                     <form id="ownerInfoForm" action="php/dataSubmit.php" method="post">
@@ -63,11 +63,11 @@
                                 <input type="submit" class="saveBtn" value="Save" name="btn">
                                 <a class="editBtn" href="#">Edit</a>
                                 <ul>
-                                    <li class="statusOptions availableStatus" id="currentStatus"><span>available</span>
+                                    <li class="statusOptions AvailableStatus" id="currentStatus"><span>Available</span>
                                         <input type="button" name="status" id="statusBtn" value="available" hidden>
                                         <ul id="allStatus">
-                                            <li><a class="statusOptions reservedOption">reserved</a></li>
-                                            <li><a class="statusOptions maintenanceOption">maintenance</a></li>
+                                            <li><a class="statusOptions ReservedOption">Reserved</a></li>
+                                            <li><a class="statusOptions MaintenanceOption">Maintenance</a></li>
                                         </ul>
                                     </li>
                                 </ul>

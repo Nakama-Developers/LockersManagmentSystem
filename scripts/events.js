@@ -9,11 +9,10 @@ function locker(id, comment, status){
     this.status = status;
 }
 
-var lockers = [];
-
 // TODO: connecting to DB and loading Data.
 
 /*    Demo  */
+/*
 var lockerNum = 555;
 for (var i = 0; i < lockerNum; i++) {
     if (i % 2 == 0) {

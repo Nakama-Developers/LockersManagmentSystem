@@ -1,19 +1,23 @@
 // Determine the number of sections needed.
-
+var lockers = [];
+var numLockers;
 var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'http://localhost:64924/php/LockersData.php', true);
+        xhr.open('GET', 'http://localhost:64924/php/LockersData.php', false);
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4) {
                 var status = xhr.status;
                 if (status >= 200 && status < 300) {
                     var obj = JSON.parse(xhr.response);
-                } else {
+                    numLockers = obj.length;
+                    for (var i = 0; i < numLockers; i++) {
+                        var currentlocker = obj[i];
+                        lockers[i] = new locker(currentlocker[0], currentlocker[2], currentlocker[1]);
+                    }
                 }
             }
-        }
+        };
         xhr.send();
 var article = document.getElementsByTagName('article')[0];
-var numLockers = lockers.length;
 var numSections = numLockers / numVisiblelockers;
 if (numLockers % numVisiblelockers != 0) {
     numSections++;
@@ -43,14 +47,14 @@ for (var i = 1; i <= numSections; i++) {
     for (var j = 0; j < numVisiblelockers; j++) {
         var currentLocker = lockers[numPrintedLockers];
         numPrintedLockers++;
-        if (currentLocker.comment != null) {
+        if (currentLocker.comment != undefined) {
             section.innerHTML +=
-                '<a class="locker" id="locker' + numPrintedLockers + '" ><span>' + numPrintedLockers + '</span><div class="lockerStatus ' + currentLocker.status + '"></div>' +
+                '<a class="locker" id="locker' + currentLocker.id + '" ><span>' + currentLocker.id + '</span><div class="lockerStatus ' + currentLocker.status + '"></div>' +
                 '<div class="commented"></div><div class="lockerHand"></div></a>';
         }
         else {
             section.innerHTML +=
-                '<a class="locker" id="locker' + numPrintedLockers + '" ><span>' + numPrintedLockers + '</span><div class="lockerStatus ' + currentLocker.status + '"></div><div class="lockerHand"></div></a>';
+                '<a class="locker" id="locker' + currentLocker.id + '" ><span>' + currentLocker.id + '</span><div class="lockerStatus ' + currentLocker.status + '"></div><div class="lockerHand"></div></a>';
         }
         if (numPrintedLockers === numLockers) {
             break;
