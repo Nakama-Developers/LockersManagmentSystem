@@ -11,7 +11,7 @@ var xhr = new XMLHttpRequest();
                     numLockers = obj.length;
                     for (var i = 0; i < numLockers; i++) {
                         var currentlocker = obj[i];
-                        lockers[i] = new locker(currentlocker[0], currentlocker[2], currentlocker[1]);
+                        lockers[i] = new locker(currentlocker[0], currentlocker[2], currentlocker[1].trim());
                     }
                 }
             }

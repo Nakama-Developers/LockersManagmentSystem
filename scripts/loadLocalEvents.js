@@ -35,6 +35,7 @@ for (var i = 0; i < allLockers.length; i++) {
     (function (i) {
         allLockers[i].addEventListener('click', function () {
             var id = allLockers[i].getElementsByTagName('span')[0].textContent;
+            //alert(id);
             document.getElementById('lockerID').textContent = id;
             document.getElementById('lockerIdValue').value = id;
             var currentStatusElement = document.getElementById('currentStatus');
@@ -51,9 +52,9 @@ for (var i = 0; i < allLockers.length; i++) {
                 document.getElementsByClassName(lockerStatus + 'Option')[0].textContent = prevLockerStatus;
                 document.getElementsByClassName(lockerStatus + 'Option')[0].className = 'statusOptions ' + prevLockerStatus + 'Option';
             }
-            if(lockerComment !== null){
+            if (lockerComment !== null) {
                 document.getElementById('comment').textContent = lockerComment;
-            } else{
+            } else {
                 document.getElementById('comment').textContent = defaultComment;
             }
             modal.style.display = "block";
@@ -64,7 +65,7 @@ for (var i = 0; i < allLockers.length; i++) {
 function findlocker(idVal){
     for (var i = numLockers - 1; i >= 0; i--){
         if(lockers[i].id == idVal){
-            return [lockers[i].comment, lockers[i].status];
+            return [lockers[i].comment, lockers[i].status + ''];
         }
     }
     return ['error: this locker does not exist!.'];

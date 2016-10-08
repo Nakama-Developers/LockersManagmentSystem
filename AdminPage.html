@@ -4,9 +4,9 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="style/psuFontFace.css" />
-        <link rel="stylesheet" type="text/css" href="style/adminPage.css" />
         <link rel="stylesheet" type="text/css" href="style/lockers.css">
         <link type="text/css" rel="stylesheet" href="style/lockerInfo.css" >
+        <link rel="stylesheet" type="text/css" href="style/adminPage.css" />
         <script src="scripts/events.js"></script>
         <title>Admin Page</title>
     </head>
@@ -23,10 +23,32 @@
                         <h1><abbr title="Prince Sultan University">PSU </abbr>Lockers</h1>
                     </header>
                 </article>
+                <footer id="copyright">
+                    <p id="footerContent">
+                        <small>
+                            Copyright 2016 Prince Sultan University, Saudi Arabia | Nakama-Developers | Copyright and Disclaimer / Privacy
+                        </small>
+                    </p>
+                </footer>
             </div>
         </div>
-        <aside id="controlPanel" class="controlPanel"></aside>
-
+        <aside id="controlPanel" class="controlPanel">
+            <div>
+                <div>
+                    <div><label for="numNewLockers">Create New Lockers:</label></div>
+                    <div><input min="0" id="numNewLockers" name="numNewLockers" type="number" title="Type how many lockers you want to create." ></div>
+                </div>
+                <div>
+                    <div><label>Numbering Schema:</label></div>
+                    <div id="numberingSchema">
+                        <label for="autoSchema">Auto</label>
+                        <input id="autoSchema" name="numberingSchema" type="radio" title="Type how many lockers you want to create." >
+                        <label for="manualSchema">Manual</label>
+                        <input id="manualSchema" name="numberingSchema" type="radio" title="Type how many lockers you want to create." >
+                    </div>
+                </div>
+            </div>
+        </aside>
         <!-- The Modal -->
         <div id="myModal" class="modal">
 

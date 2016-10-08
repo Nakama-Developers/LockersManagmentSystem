@@ -57,6 +57,40 @@ body {
     transition: background-color 1s ,border-bottom-color 1s;
 }
 
+/* Control Panel's content */
+aside > div > div{
+    margin: 15px 0 0 10px;
+}
+
+aside > div > div > div{
+    width: 49%;
+    display: inline-block;
+}
+
+    aside > div > div > div:last-child{
+        text-align: right;
+        margin-left: -15px;
+    }
+
+aside > div > div > div > input{
+    width: 30%;
+}
+
+#numberingSchema > label{
+    color: #808080;
+}
+
+aside > div > div > div > input[type='radio']{
+    width: auto;
+    margin: 10px 0;
+}
+
+aside > div > div > div > label{
+    width: auto;
+    display: inline-block;
+}
+
+
 /* -- others -- */
 
 img {
@@ -106,14 +140,19 @@ header > h1{
     height: 100%;
     z-index: 10;
     width: 0%;
-    transition: width .8s;
-    -webkit-transition: width .8s;
+    transition: visibility 0.5s, width .8s;
+    visibility: hidden;
+    font-size: 90%;
+    font-weight: bold;
+    -webkit-transition: visibility 0.5s, width .8s;
 }
 
 .openPanel{
     width: 20%;
     height: 100%;
+    visibility: visible;
     transition: width .5s;
+    padding-top:  120px;
     -webkit-transition: width .5s;
 }
 
@@ -149,4 +188,16 @@ header > h1{
 .selected {
     font-size: 1.2em !important;
     transition: font-size 0.3s;
+}
+
+#copyright{
+    height: 70px;
+    background: #25B6C9 url(../img/footer-style.PNG) no-repeat right bottom;
+    color: #FFF;
+    box-shadow: inherit;
+}
+
+#footerContent{
+    margin-left: 20px;
+    padding-top: 5px;
 }
